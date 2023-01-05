@@ -1,15 +1,13 @@
-package com.logone.abonnementservice;
+package com.logone.abonneservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 @SpringBootApplication
-
-public class AbonnementServiceApplication {
+public class AbonneServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AbonnementServiceApplication.class, args);
+		SpringApplication.run(AbonneServiceApplication.class, args);
 	}
 
 }

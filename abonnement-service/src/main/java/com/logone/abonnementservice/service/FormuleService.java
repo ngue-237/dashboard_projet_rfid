@@ -5,9 +5,9 @@ import com.logone.abonnementservice.dto.FormuleResponseDTO;
 
 import java.util.List;
 
-public interface formuleService {
+public interface FormuleService {
     FormuleResponseDTO saveNewFormule(FormuleRequestDTO formuleRequestDTO);
-    FormuleRequestDTO getFormuleByFormuneName(String formuleName);
-    Void deleteFormuleById(Long id);
+    FormuleResponseDTO getFormuleByFormuneName(String formuleName);
+    void deleteFormuleById(Long id);
     List<FormuleResponseDTO> getAllFormules();
 }

@@ -47,7 +47,7 @@ public class UserController {
                         loginDTO.getEmail(),
                         loginDTO.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        String token = jwtGenerator.generateToken(authentication);
+         String token = jwtGenerator.generateToken(authentication);
         return new  ResponseEntity<>(new AuthResponseDTO(token), HttpStatus.OK);
     }
 }

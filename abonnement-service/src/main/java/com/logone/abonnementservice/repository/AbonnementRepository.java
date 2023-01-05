@@ -1,10 +1,9 @@
 package com.logone.abonnementservice.repository;
 
-import com.logone.abonnementservice.entity.Formule;
+import com.logone.abonnementservice.entity.Abonnement;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FormuleRepository extends JpaRepository<Formule, Long> {
-    Formule findByFormuleName(String formuleName);
+public interface AbonnementRepository extends JpaRepository<Abonnement, Long> {
 }
