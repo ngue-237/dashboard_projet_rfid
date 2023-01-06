@@ -5,10 +5,9 @@ import com.logone.abonneservice.dto.AbonneResponseDTO;
 import com.logone.abonneservice.service.AbonneService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/abonne-service")
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AbonneController {
 
     private AbonneService abonneService;
+
 
     public AbonneController(AbonneService abonneService) {
         this.abonneService = abonneService;
@@ -26,4 +26,16 @@ public class AbonneController {
         log.error("AbonneRequest {}", abonneRequestDTO);
     return ResponseEntity.ok().body(this.abonneService.saveNewAbonne(abonneRequestDTO));
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<AbonneResponseDTO> getAbonneById(@PathVariable(name = "id")  Long id)
+    {
+        return ResponseEntity.ok().body(this.abonneService.getAbonneById(id));
+    }
+
+    @GetMapping("/all")
+    public  ResponseEntity<List<AbonneResponseDTO>> listAllAbonne(){
+        return ResponseEntity.ok().body(this.abonneService.getAllAbonne());
+    }
+
 }
